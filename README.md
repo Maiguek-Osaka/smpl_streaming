@@ -71,6 +71,30 @@ The SONIC controller (or any ZMQ SUB socket) should subscribe to `tcp://<streame
 
 ---
 
+## Connecting to SONIC
+
+To visualize motion on the SONIC robot, open three terminals on the host machine running **SONIC GEAR**:
+
+**Terminal 1 — MuJoCo simulator**
+```bash
+cd /path/to/GR00T-WholeBodyControl
+source .venv_sim/bin/activate
+python gear_sonic/scripts/run_sim_loop.py
+```
+
+**Terminal 2 — C++ deployment bridge**
+```bash
+cd /path/to/GR00T-WholeBodyControl/gear_sonic_deploy
+bash deploy.sh --input-type zmq --zmq-topic pose sim
+```
+
+**Terminal 3 — SMPL streamer (this repo)**
+```bash
+python edge_to_sonic.py --input data/test_tango.pkl --fps 50 --host 0.0.0.0 --port 5556
+```
+
+---
+
 ## Supported input formats
 
 | Extension | Source |
