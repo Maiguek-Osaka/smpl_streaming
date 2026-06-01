@@ -1,0 +1,14 @@
+name: edge2sonic
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+    - torch
+    - numpy
+    - scipy
+    - pyzmq
+    - msgpack
