@@ -19,7 +19,7 @@ SMPL file (.npz / .pkl / .pt)
 ### 1. Clone (with submodules)
 
 ```bash
-git clone --recurse-submodules https://github.com/Maiguek/edge2sonic_streaming.git
+git clone --recurse-submodules https://github.com/Maiguek-Osaka/edge2sonic_streaming.git
 cd edge2sonic_streaming
 ```
 
