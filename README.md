@@ -1,4 +1,4 @@
-# edge2sonic — SMPL Motion Streaming for SONIC
+# SMPL Streaming
 
 Streams SMPL human motion data over **ZMQ** to the SONIC whole-body controller running on a Unitree G1 robot. Motion is post-processed by [Kimodo](https://github.com/nv-tlabs/kimodo) and published as a real-time pose stream at a configurable FPS.
 
@@ -27,7 +27,7 @@ cd edge2sonic_streaming
 
 ```bash
 conda env create -f environment.yml
-conda activate edge2sonic
+conda activate smpl-streaming
 ```
 
 ### 3. Install local packages

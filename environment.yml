@@ -1,4 +1,4 @@
-name: edge2sonic
+name: smpl-streaming
 channels:
   - pytorch
   - conda-forge
