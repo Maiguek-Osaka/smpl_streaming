@@ -5,15 +5,8 @@ __pycache__/
 dist/
 build/
 *.so
-*.npz
-*.pkl
-*.pt
-*.pth
-!data/amass_test.npz
-!data/test_song.pkl
-!data/test_tango.pkl
-!data/smpl_params.pt
 .env
 .venv
 *.ipynb
 recordings/
+sonic_stream_payload.npz

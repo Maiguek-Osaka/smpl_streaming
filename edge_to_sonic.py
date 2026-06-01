@@ -3,6 +3,14 @@
 from __future__ import annotations
 
 import os
+import sys
+
+# The 'kimodo/' submodule directory has no __init__.py, so Python would treat it as a
+# namespace package when scanning cwd, causing kimodo.assets to resolve to the data
+# directory instead of assets.py. Inserting the submodule root into sys.path first
+# makes PathFinder discover kimodo/kimodo/__init__.py as a regular package.
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "kimodo"))
+
 import zmq
 import time
 import torch
@@ -16,9 +24,9 @@ from utils.rotation_conversion import decompose_rotation_aa
 from utils.rotations import remove_smpl_base_rot, smpl_root_ytoz_up
 from utils.g1_gripper_ik_solver import G1GripperInverseKinematicsSolver
 
-from kimodo.kimodo.exports.smplx import get_amass_parameters, amass_arrays_to_kimodo_motion
-from kimodo.kimodo.skeleton.registry import build_skeleton
-from kimodo.kimodo.postprocess import post_process_motion
+from kimodo.exports.smplx import get_amass_parameters, amass_arrays_to_kimodo_motion
+from kimodo.skeleton.registry import build_skeleton
+from kimodo.postprocess import post_process_motion
 
 from utils.zmq_planner_sender import (
     build_command_message,
